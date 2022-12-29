@@ -1,0 +1,19 @@
+{% extends 'header.html' %}
+{% block content %}
+<div class="container">
+    <h3 class="alert alert-success mt-4">News Aggregater Site from Geo News </h3>
+    <div class="row">
+        {% for latestNews in latest %}
+        <div class="col-md-4">
+            <div class="card mt-3 bg-info" style="width: 18rem;">
+                <div class="card-body">
+                    <p class="card-text">{{ latestNews.heading }}</p>
+                    <p class="card-title">{{ latestNews.date }}</p>
+                    <a href="{{ latestNews.link }}" class="btn btn-success">Go for more detail</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
